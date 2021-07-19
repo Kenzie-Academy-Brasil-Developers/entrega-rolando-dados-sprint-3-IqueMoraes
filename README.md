@@ -11,6 +11,19 @@ Use JavaScript para simular 1000 lançamentos de um par de dados. *Você precisa
 Para cada possível lançamento, conte a frequência. Você deve usar um array para registrar essas contagens.
 
 Inicialize um array chamado *`count`* preenchendo-o com zeros. Em seguida, sempre que uma rolagem de dados resultar em, digamos, sete, adicione um ao valor do 7º elemento do array de contagem.
+[{
+    2: 0;
+    3: 0;
+    4: 0;
+    5: 0;
+    6: 0;
+    7: 0;
+    8: 0;
+    9: 0;
+    10: 0;
+    11: 0;
+    12: 0;
+}]
 
 Por exemplo, se a variável rollOfDice contiver a rolagem atual, você pode incrementar a contagem com um código assim:
 
