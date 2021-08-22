@@ -3,84 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Rolando dados</title>
-    <style>
-        html, body, div, h1, h2, h3, h4, h5, p {
-            margin: 0;
-            padding: 0;
-            box-sizing: content-box;
-        }
-
-        body {
-            background-color: rgb(23, 88, 23);
-        }
-        header {
-            margin-bottom: 25px;
-            background-color: rgb(95, 44, 2);
-            border-bottom: 3px solid goldenrod;
-            box-shadow: 0 10px 20px 0px rgba(0,0,0,0.56);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        h1 {
-            padding-top: 20px;
-            padding-bottom: 20px;
-            color: goldenrod;
-        }
-
-        #grafico_frequencia {
-
-        }
-        .caixa_individual_grafico {
-            display: flex;
-            align-items: baseline;
-            margin:10px;
-        }
-
-        .caixa_individual_grafico p {
-            display: inline;
-        }
-        .linha_grafico {
-            width: 10px;
-            height: 10px;
-            background-color: indianred;
-        }
-
-        .linhas_frequencia {
-            display: flex;
-            flex-flow: row wrap;
-        }
-
-
-
-        section #mesa_dos_resultados {
-            columns: 2;
-            column-gap: 5px;
-        }
-
-        .numeroLance {
-            font-size: 16px;
-        }
-
-        .dados {
-            width: 30px;
-            height: 30px;
-            margin: 10px;
-            border: 2px solid gray;
-            border-radius: 6px;
-            display: inline-block;
-            background-color: rgb(240, 219, 187);
-        }
-
-        .numero_dados {
-            font-family: sans-serif;
-            font-weight: bold;
-            text-align: center;
-            font-size: 20px;
-        }
-        
-    </style>
 </head>
 <body>
     <header>
@@ -90,48 +14,55 @@
         <div>
             <label for="lances">Selecione o número de lances:</label>
             <input type="number" name="lances" id="input_lances" value="1000">
-            <button id="lancador" >Lançar!</button>
+            <button id="lancador" >Lançar dados!</button>
         </div>
        
     </header>
-    <section id="grafico_frequencia">
-        <h2>Frequência das somas dos resultados:</h2>
-        <div class="caixa_individual_grafico">
-            <p>2:</p> <div class="linhas_frequencia" id="2"> </div>
-        </div>
-        <div class="caixa_individual_grafico">
-            <p>3:</p> <div class="linhas_frequencia" id="3"> </div>
-        </div>
-        <div class="caixa_individual_grafico">
-            <p>4:</p> <div class="linhas_frequencia" id="4"> </div>
-        </div>
-        <div class="caixa_individual_grafico">
-            <p>5:</p> <div class="linhas_frequencia" id="5"> </div>
-        </div>
-        <div class="caixa_individual_grafico">
-            <p>6:</p> <div class="linhas_frequencia" id="6"> </div>
-        </div>
-        <div class="caixa_individual_grafico">
-            <p>7:</p> <div class="linhas_frequencia" id="7"> </div>
-        </div>
-        <div class="caixa_individual_grafico">
-            <p>8:</p> <div class="linhas_frequencia" id="8"> </div>
-        </div>
-        <div class="caixa_individual_grafico">
-            <p>9:</p> <div class="linhas_frequencia" id="9"> </div>
-        </div>
-        <div class="caixa_individual_grafico">
-            <p>10:</p> <div class="linhas_frequencia" id="10"> </div>
-        </div>
-        <div class="caixa_individual_grafico">
-            <p>11:</p> <div class="linhas_frequencia" id="11"> </div>
-        </div>
-        <div class="caixa_individual_grafico">
-            <p>12:</p> <div class="linhas_frequencia" id="12"> </div>
-        </div>
-
+    <section >
+        <h2>Frequência dos resultados:</h2>
+        <section id="grafico_frequencia">
+            <div class="caixa_individual_grafico">
+                <p>2</p> <div class="linhas_frequencia" id="2"> </div>
+            </div>
+            <div class="caixa_individual_grafico">
+                <p>3</p> <div class="linhas_frequencia" id="3"> </div>
+            </div>
+            <div class="caixa_individual_grafico">
+                <p>4</p> <div class="linhas_frequencia" id="4"> </div>
+            </div>
+            <div class="caixa_individual_grafico">
+                <p>5</p> <div class="linhas_frequencia" id="5"> </div>
+            </div>
+            <div class="caixa_individual_grafico">
+                <p>6</p> <div class="linhas_frequencia" id="6"> </div>
+            </div>
+            <div class="caixa_individual_grafico">
+                <p>7</p> <div class="linhas_frequencia" id="7"> </div>
+            </div>
+            <div class="caixa_individual_grafico">
+                <p>8</p> <div class="linhas_frequencia" id="8"> </div>
+            </div>
+            <div class="caixa_individual_grafico">
+                <p>9</p> <div class="linhas_frequencia" id="9"> </div>
+            </div>
+            <div class="caixa_individual_grafico">
+                <p>10</p> <div class="linhas_frequencia" id="10"> </div>
+            </div>
+            <div class="caixa_individual_grafico">
+                <p>11</p> <div class="linhas_frequencia" id="11"> </div>
+            </div>
+            <div class="caixa_individual_grafico">
+                <p>12</p> <div class="linhas_frequencia" id="12"> </div>
+            </div>
+        </section>
     </section>
-    <section id="mesa_dos_resultados">
+    <section class="frequenciaEmTexto" >
+        <h2>Frequência escrita:</h2>
+        <div id="frequenciaEmTexto" class="frequenciaEmTexto"></div>
+    </section>
+    <section id="mesaDosDados" >
+        <h2>Impressão dos dados na mesa:</h2>
+        <div id="mesa_dos_resultados"></div>
 
        
 

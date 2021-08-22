@@ -1,0 +1,177 @@
+html, body, div, h3{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(23, 88, 23);
+}
+header {
+    margin-bottom: 25px;
+    background-color: rgb(95, 44, 2);
+    border-bottom: 3px solid goldenrod;
+    box-shadow: 0 10px 20px 0px rgba(0,0,0,0.56);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: goldenrod;
+    font-weight: bold;
+}
+body > header > div:nth-child(1){
+    border: outset;
+    width: 67%;
+    border-color: #ffd05a;
+    background-color: goldenrod;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+h1{
+  font-size: 30px;
+  color: transparent;
+  text-shadow: 1px 0.2px 0.5px rgba(121, 66, 3, 0.699);
+}
+header div{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+#lancador{
+    background-color: goldenrod;
+    border: outset;
+    border-color: #ffd05a;
+    font-family: sans-serif;
+    line-height: 25px;
+    color: white;
+    font-size: 16px;
+}
+
+
+h2{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    color: bisque;
+}
+
+p{
+    font-size: 16px;
+    background-color: #2b5917;
+    color: cornsilk;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+
+#grafico_frequencia {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.caixa_individual_grafico {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin:10px;
+}
+
+.caixa_individual_grafico p {
+    display: inline;
+}
+.linha_grafico {
+    width: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.linhas_frequencia {
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.frequenciaEmTexto{
+    background-color: bisque;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+.frequenciaEmTexto h2{
+    color: #2b5917;
+}
+
+.frequenciaEmTexto p{
+    padding: 5px;
+    margin: 5px;
+}
+
+section #mesa_dos_resultados {
+    columns: 2;
+    column-gap: 5px;
+}
+
+.numeroLance {
+    font-size: 16px;
+}
+
+.dados {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border: 2px solid gray;
+    border-radius: 6px;
+    display: inline-block;
+    background-color: rgb(240, 219, 187);
+}
+
+.numero_dados {
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+#mesaDosDados{
+    padding: 20px;
+}
+#mesaDosDados div{
+    width: 50;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (min-width:1024px) {
+    body > header > div:nth-child(1) {
+        width: 400px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    h1{
+        font-size: 40px;
+    }
+    h2{
+        font-size: 30px;
+    }
+    #grafico_frequencia {
+        display: flex;
+        box-sizing: border-box;
+        justify-content: space-evenly;
+    }
+    .linha_grafico {
+      width: 50px;
+    }
+    p{
+        font-size: 20px;
+    }
+    .frequenciaEmTexto p{
+        padding: 10px;
+        margin: 5px;
+    }
+}

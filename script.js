@@ -1,26 +1,32 @@
 // defenir objeto inicial
-const count = [
-    {2: 0},
-    {3: 0},
-    {4: 0},
-    {5: 0},
-    {6: 0},
-    {7: 0},
-    {8: 0},
-    {9: 0},
-    {10: 0},
-    {11: 0},
-    {12: 0}
+let count = [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
 ]
-console.log(count)
 
 //seleção da área para limpar filhos e imprimir novos
 const mesa = document.getElementById('mesa_dos_resultados');
+const freqEmTexto = document.getElementById('frequenciaEmTexto')
+
 
 //função para limpar a mesa
 function limparMesa(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
+    }
+    let i=0;
+    while(i<count.length){
+        count[i]=0;
+        i++
     }
 }
 
@@ -35,17 +41,36 @@ const faceAleatoria = () => {
 
 //função para desenhar gŕafico de frequência
   const escreveGrafico = (y, z) => {
-    //cria os pontos do gráfico na impressão dos dados
-    const pontoFreq = document.createElement("div");
-    pontoFreq.classList.add('linha_grafico')
-   
-    //soma os dados
-    let soma = y + z;
+      
+     let max = 0;
+     count.filter(item => {
+         if(item > max){
+             max = item;
+         }
+     })
 
-    //cria uma variável para atribuir os pontos
-    const numero_da_vez = document.getElementById(soma);
-    numero_da_vez.appendChild(pontoFreq);
+      for(let i=2; i<13; i++){
+        const numero_da_vez = document.getElementById(`${i}`);
+        const pontoFreq = document.createElement("div");
+        pontoFreq.classList.add('linha_grafico')
+        pontoFreq.style.height = `${(count[i-2]*100)/max}%`
+        numero_da_vez.appendChild(pontoFreq);
+    }
 };
+
+//função para expor frequencia de numeros em texto
+
+function frequenciaEmTexto(x){
+    
+    for(let i=2; i<13; i++){
+        const p = document.createElement('p')
+        p.innerText= `${i}: ${count[i-2]}`
+        freqEmTexto.appendChild(p)
+       
+    }
+
+
+}
 
 const escreveDados = (x, y, z) => {
     //cria a área de impressão dos dados
@@ -88,21 +113,27 @@ const escreveDados = (x, y, z) => {
 
 const lancador = document.getElementById("lancador");
 lancador.addEventListener("click", () => {
-    console.log('aqui funciona');
-
     limparMesa(mesa);
+    limparMesa(freqEmTexto);
+    for(let i=2; i< 13;i++){
+        const numero_da_vez = document.getElementById(`${i}`);
+        limparMesa(numero_da_vez)
+    }
 
     const numero_lances = document.getElementById('input_lances');
     const lances = numero_lances.value;
 
     for (let rodadas = 0; rodadas < lances ; rodadas ++) {
-        console.log(rodadas);
+        // console.log(rodadas);
         const resultadoDado1 = faceAleatoria();
         const resultadoDado2 = faceAleatoria();
         const numeroLance = rodadas + 1;
+        count[(resultadoDado1+resultadoDado2)-2]++
 
-        escreveGrafico(resultadoDado1, resultadoDado2);
         escreveDados(numeroLance, resultadoDado1, resultadoDado2);
-
+        
     }
+    escreveGrafico();
+    frequenciaEmTexto()
+
 });
